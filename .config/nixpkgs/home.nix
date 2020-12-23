@@ -5,11 +5,16 @@
   programs.home-manager.enable = true;
   programs.bash = {
     enable = true;
+
     profileExtra = ''
       export PATH="''$HOME/.nix-profile/bin:''$PATH"
       export NIX_PATH=''$HOME/.nix-defexpr/channels''${NIX_PATH:+:}''$NIX_PATH
-      export PS1="\[\033[36m\]\D{%Y-%m-%d-%I:%M%p}\[\033[00m\] \e[96m\u@''$WSL_DISTRO_NAME\e[0m:\[\033[93m\]\w\[\033[00m\]''$ "
+      export PS1="\[\033[38;5;14m\]\u\[\033[00m\]@\[\033[38;5;32m\]''$WSL_DISTRO_NAME:\[\033[38;5;228m\]\w\[\033[00m\]\$ "
     '';
+
+    shellAliases = {
+      ll = "ls -l";
+    };
   };
 
   programs.direnv = {
