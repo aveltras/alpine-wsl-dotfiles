@@ -1,6 +1,14 @@
-# Alpine WSL dotfiles
+# Alpine WSL dotfiles  <!-- omit in toc -->
 
 Windows WSL2 dotfiles managed with [Nix](https://nixos.org/download.html), [Home Manager](https://github.com/nix-community/home-manager) and [yadm](https://yadm.io/)
+
+- [Setup instructions](#setup-instructions)
+  - [Enabling WSL 2 under Windows](#enabling-wsl-2-under-windows)
+  - [Installing Alpine from the Microsoft Store](#installing-alpine-from-the-microsoft-store)
+  - [Setting up sudo](#setting-up-sudo)
+  - [Preparing Alpine for Docker and VSCode](#preparing-alpine-for-docker-and-vscode)
+  - [Installing Docker for Windows](#installing-docker-for-windows)
+  - [Optional: Managing your packages with Nix and Home Manager](#optional-managing-your-packages-with-nix-and-home-manager)
 
 ## Setup instructions
 
@@ -41,7 +49,7 @@ usermod -aG sudo <your_username>
 ```
 You can now quit the root session as we'll proceed with our default user now on.
 
-### Preparing Alpine for Nix, Docker and VSCode
+### Preparing Alpine for Docker and VSCode
 
 For Docker Desktop for Windows to work with Alpine WSL. We need to install glibc which is available [here](https://github.com/sgerrand/alpine-pkg-glibc). We can run the following commands:
 
