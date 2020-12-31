@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.packageOverrides = pkgs: rec {
+    scaleway-cli = pkgs.callPackage ./overrides/scaleway-cli.nix {};
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.bash = {
@@ -46,6 +50,7 @@
 
   home.packages = with pkgs; [
     bash
+    scaleway-cli
     yadm
   ];
 }
